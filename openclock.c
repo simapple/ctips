@@ -2,21 +2,34 @@
 
 #define NUMBER_MAX 10;
 
-struct number{
-	int tag;
+typedef struct number{
+	int first;
+	int second;
+	int third;
+	int fourth;
 	int *ns;
-};
+} number2;
 int main(){
 	int pool[10] = {0,1,2,3,4,5,6,7,8,9};
-	struct number *first;
-	first.tag = 0;
-	first.ns = pool;
-	printf("%d",*(first.ns + 7));
+	struct number pl;
+	pl.first = 0;
+	pl.second =0 ;
+	pl.third = 0;
+	pl.fourth = 0;
+	pl.ns = pool;
+	//printf("%d",*(first.ns + 7));
+	int i = 0;
+	while (i < 20){
+		jisuan(&pl);
+		printf("%d\n",pl.first);
+		i++;	
+	}
+
 	return 0;
 }
 
-int jisuan(){
-	
+void jisuan(number2 *p){
+	scroll(p);
 }
 
 int firstclick(){
@@ -42,10 +55,10 @@ int fourthclick(){
 	static int; 
 }
 
-void scroll(*p){
-	if(*p < 9){
-		*p++;
+void scroll(number2 *p){
+	if(p->first < 9){
+		p->first++;
 	}else{
-		*p = 0;
+		p->first = 0;
 	}	
 }
